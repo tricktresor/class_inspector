@@ -117,7 +117,9 @@ CLASS lcl_main IMPLEMENTATION.
 
     TRY.
         DATA(classinfo) = cl_oo_class=>get_instance( i_class ).
-      CATCH cx_class_not_existent ##no_handler.
+      CATCH cx_class_not_existent INTO DATA(error).
+        MESSAGE error TYPE 'I' DISPLAY LIKE 'E'.
+        RETURN.
     ENDTRY.
 
     DATA(includes) = cl_oo_classname_service=>get_all_class_includes( class_name = i_class ).
