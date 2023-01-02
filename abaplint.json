@@ -561,7 +561,7 @@
     },
     "method_parameter_names": {
       "exclude": [],
-      "severity": "Error",
+      "severity": "Info",
       "patternKind": "required",
       "ignoreNames": [],
       "ignorePatterns": [],
