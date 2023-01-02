@@ -1,4 +1,4 @@
-name: CI
+name: abaplint
 
 on: [push]
 
