@@ -867,7 +867,7 @@
     },
     "types_naming": {
       "exclude": [],
-      "severity": "Error",
+      "severity": "Info",
       "pattern": "^TY_.+$"
     },
     "uncaught_exception": {
