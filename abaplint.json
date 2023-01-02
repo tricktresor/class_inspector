@@ -274,7 +274,7 @@
       "exclude": [],
       "severity": "Error",
       "allowExit": false,
-      "allowCheck": false
+      "allowCheck": true
     },
     "exporting": {
       "exclude": [],
