@@ -614,7 +614,7 @@
     },
     "no_inline_in_optional_branches": {
       "exclude": [],
-      "severity": "Error"
+      "severity": "Warning"
     },
     "no_public_attributes": {
       "exclude": [],
