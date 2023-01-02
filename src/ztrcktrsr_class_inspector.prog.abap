@@ -39,19 +39,23 @@ ENDCLASS.
 CLASS lcl_main IMPLEMENTATION.
 
   METHOD constructor.
+
     me->container_grid = container_grid.
     me->container_code = container_code.
+
   ENDMETHOD.
 
   METHOD on_double_click.
+
     editor( ).
     DATA(source) = class_includes[ row ].
     display_source( source-repid ).
+
   ENDMETHOD.
 
   METHOD display_source.
-    DATA lt_source TYPE STANDARD TABLE OF string.
 
+    DATA lt_source TYPE STANDARD TABLE OF string.
     READ REPORT include INTO lt_source.
     mo_editor->set_text( lt_source ).
 
@@ -73,13 +77,13 @@ CLASS lcl_main IMPLEMENTATION.
 
       TRY.
           " create SALV
-          CALL METHOD cl_salv_table=>factory
+          cl_salv_table=>factory(
             EXPORTING
               r_container  = container_grid
             IMPORTING
               r_salv_table = grid
             CHANGING
-              t_table      = class_includes.
+              t_table      = class_includes ).
 
           grid->get_functions( )->set_all( ).
           grid->get_display_settings( )->set_list_header( CONV #( classname ) ).
@@ -180,11 +184,10 @@ CLASS lcl_main IMPLEMENTATION.
           WHEN seoc_exposure_public THEN icon_led_green )
           ) TO class_includes.
     ENDLOOP.
+
     display( ).
 
   ENDMETHOD.
-
-
 
 ENDCLASS.
 
@@ -201,10 +204,5 @@ INITIALIZATION.
     container_grid = container_grid
     container_code = container_code  ).
 
-
 AT SELECTION-SCREEN.
   main->start( p_clas ).
-
-
-
-START-OF-SELECTION.
