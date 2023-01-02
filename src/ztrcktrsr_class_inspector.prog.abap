@@ -178,12 +178,12 @@ CLASS lcl_main IMPLEMENTATION.
       ENDIF.
 
       APPEND VALUE #(
-        repid = include
-        descr = description
-        exposure = SWITCH #( methodexposure
-          WHEN seoc_exposure_private THEN icon_led_red
-          WHEN seoc_exposure_protected THEN icon_led_yellow
-          WHEN seoc_exposure_public THEN icon_led_green )
+                 repid = include
+                 descr = description
+                 exposure = SWITCH #( methodexposure
+                              WHEN seoc_exposure_private   THEN icon_led_red
+                              WHEN seoc_exposure_protected THEN icon_led_yellow
+                              WHEN seoc_exposure_public    THEN icon_led_green )
           ) TO class_includes.
     ENDLOOP.
 
