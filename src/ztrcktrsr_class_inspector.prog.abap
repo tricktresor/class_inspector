@@ -24,15 +24,18 @@ CLASS lcl_main DEFINITION.
     METHODS start
       IMPORTING
         i_class TYPE clike.
+
   PROTECTED SECTION.
-    DATA mt_redef     TYPE STANDARD TABLE OF seoredef.
+    DATA mt_redef          TYPE STANDARD TABLE OF seoredef.
     DATA container_grid    TYPE REF TO cl_gui_container.
     DATA container_code    TYPE REF TO cl_gui_container.
-    DATA mo_editor    TYPE REF TO cl_gui_abapedit.
-    DATA class_includes TYPE tt_includes.
-    DATA grid TYPE REF TO cl_salv_table.
-    DATA classname TYPE seoclsname.
-    METHODS display_source IMPORTING include TYPE programm.
+    DATA mo_editor         TYPE REF TO cl_gui_abapedit.
+    DATA class_includes    TYPE tt_includes.
+    DATA grid              TYPE REF TO cl_salv_table.
+    DATA classname         TYPE seoclsname.
+    METHODS display_source
+      IMPORTING
+        include TYPE programm.
 
 ENDCLASS.
 
@@ -103,7 +106,6 @@ CLASS lcl_main IMPLEMENTATION.
     ELSE.
       grid->refresh( ).
     ENDIF.
-
 
   ENDMETHOD.
 
