@@ -140,7 +140,7 @@ CLASS lcl_main IMPLEMENTATION.
             EXCEPTIONS
               class_not_existing  = 1
               method_not_existing = 2
-              OTHERS              = 3  ).
+              OTHERS              = 3 ).
           IF sy-subrc = 0.
             description = method-cpdname.
             TRY.
@@ -194,7 +194,9 @@ CLASS lcl_main IMPLEMENTATION.
 ENDCLASS.
 
 INITIALIZATION.
-  DATA(docker) = NEW cl_gui_docking_container( side = cl_gui_docking_container=>dock_at_bottom ratio = 95 ).
+  DATA(docker) = NEW cl_gui_docking_container(
+    side  = cl_gui_docking_container=>dock_at_bottom
+    ratio = 95 ).
   DATA(splitter) = NEW cl_gui_easy_splitter_container(
     parent      = docker
     orientation = cl_gui_easy_splitter_container=>orientation_horizontal ).
@@ -204,7 +206,7 @@ INITIALIZATION.
 
   DATA(main) = NEW lcl_main(
     container_grid = container_grid
-    container_code = container_code  ).
+    container_code = container_code ).
 
 AT SELECTION-SCREEN.
   main->start( p_clas ).
