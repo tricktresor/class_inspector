@@ -482,8 +482,8 @@
     },
     "line_break_multiple_parameters": {
       "exclude": [],
-      "severity": "Error",
-      "count": 1
+      "severity": "Warning",
+      "count": 3
     },
     "line_break_style": {
       "exclude": [],
@@ -715,7 +715,7 @@
     "pragma_style": {
       "exclude": [],
       "severity": "Error",
-      "style": "upper"
+      "style": "lower"
     },
     "prefer_corresponding": {
       "exclude": [],
