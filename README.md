@@ -1,3 +1,4 @@
+[![abaplint](https://github.com/tricktresor/class_inspector/actions/workflows/abaplint.yml/badge.svg)](https://github.com/tricktresor/class_inspector/actions/workflows/abaplint.yml)
 # Class inspector
 
 inspector to display technical parts of a class
