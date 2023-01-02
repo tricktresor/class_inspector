@@ -2,7 +2,6 @@ REPORT ztrcktrsr_class_inspector.
 
 PARAMETERS p_clas TYPE seoclsname DEFAULT 'CL_GUI_CONTAINER'.
 
-
 CLASS lcl_main DEFINITION.
   PUBLIC SECTION.
 
