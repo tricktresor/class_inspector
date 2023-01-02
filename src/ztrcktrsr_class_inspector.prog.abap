@@ -5,12 +5,12 @@ PARAMETERS p_clas TYPE seoclsname DEFAULT 'CL_GUI_CONTAINER'.
 CLASS lcl_main DEFINITION.
   PUBLIC SECTION.
 
-    TYPES: BEGIN OF _include,
+    TYPES: BEGIN OF ts_include,
              repid    TYPE syrepid,
              descr    TYPE c LENGTH 60,
              exposure TYPE icon_d,
-           END OF _include,
-           _includes TYPE STANDARD TABLE OF _include WITH EMPTY KEY.
+           END OF ts_include,
+           tt_includes TYPE STANDARD TABLE OF ts_include WITH EMPTY KEY.
 
     METHODS on_double_click
                 FOR EVENT double_click OF cl_salv_events_table
@@ -29,7 +29,7 @@ CLASS lcl_main DEFINITION.
     DATA container_grid    TYPE REF TO cl_gui_container.
     DATA container_code    TYPE REF TO cl_gui_container.
     DATA mo_editor    TYPE REF TO cl_gui_abapedit.
-    DATA class_includes TYPE _includes.
+    DATA class_includes TYPE tt_includes.
     DATA grid TYPE REF TO cl_salv_table.
     DATA classname TYPE seoclsname.
     METHODS display_source IMPORTING include TYPE programm.
@@ -41,15 +41,12 @@ CLASS lcl_main IMPLEMENTATION.
   METHOD constructor.
     me->container_grid = container_grid.
     me->container_code = container_code.
-
   ENDMETHOD.
 
   METHOD on_double_click.
     editor( ).
     DATA(source) = class_includes[ row ].
-
     display_source( source-repid ).
-
   ENDMETHOD.
 
   METHOD display_source.
