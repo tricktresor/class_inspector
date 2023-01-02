@@ -515,7 +515,7 @@
     },
     "local_variable_names": {
       "exclude": [],
-      "severity": "Error",
+      "severity": "Info",
       "patternKind": "required",
       "ignoreNames": [],
       "ignorePatterns": [],
