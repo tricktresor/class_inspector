@@ -22,7 +22,10 @@
   "syntax": {
     "version": "v756",
     "errorNamespace": "^(Z|Y|LCL_|TY_|LIF_)",
-    "globalConstants": [],
+    "globalConstants": [
+      seoc_exposure_private,
+      seoc_exposure_protected,
+      seoc_exposure_global],
     "globalMacros": []
   },
   "rules": {
