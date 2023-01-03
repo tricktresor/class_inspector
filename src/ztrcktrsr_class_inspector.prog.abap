@@ -26,7 +26,6 @@ CLASS lcl_main DEFINITION.
         i_class TYPE clike.
 
   PROTECTED SECTION.
-    DATA mt_redef          TYPE STANDARD TABLE OF seoredef.
     DATA container_grid    TYPE REF TO cl_gui_container.
     DATA container_code    TYPE REF TO cl_gui_container.
     DATA mo_editor         TYPE REF TO cl_gui_abapedit.
@@ -111,8 +110,7 @@ CLASS lcl_main IMPLEMENTATION.
 
   METHOD start.
 
-    DATA textpool TYPE table_of_textpool.
-    DATA description TYPE string.
+    DATA textpool TYPE table_of_textpool ##needed.
 
     CHECK classname <> i_class.
     classname = i_class.
@@ -142,7 +140,7 @@ CLASS lcl_main IMPLEMENTATION.
               method_not_existing = 2
               OTHERS              = 3 ).
           IF sy-subrc = 0.
-            description = method-cpdname.
+            DATA(description) = method-cpdname.
             TRY.
                 DATA(methodexposure) = classinfo->get_component_exposure( cpdname = method-cpdname ).
               CATCH cx_component_not_existing ##no_handler.
