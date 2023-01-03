@@ -23,9 +23,9 @@
     "version": "v756",
     "errorNamespace": "^(Z|Y|LCL_|TY_|LIF_)",
     "globalConstants": [
-      seoc_exposure_private,
-      seoc_exposure_protected,
-      seoc_exposure_global],
+      "seoc_exposure_private",
+      "seoc_exposure_protected",
+      "seoc_exposure_global"],
     "globalMacros": []
   },
   "rules": {
