@@ -110,8 +110,6 @@ CLASS lcl_main IMPLEMENTATION.
 
   METHOD start.
 
-    DATA textpool TYPE table_of_textpool ##needed.
-
     CHECK classname <> i_class.
     classname = i_class.
 
@@ -125,7 +123,6 @@ CLASS lcl_main IMPLEMENTATION.
     DATA(includes) = cl_oo_classname_service=>get_all_class_includes( class_name = i_class ).
     CLEAR class_includes.
     LOOP AT includes INTO DATA(include).
-      READ TEXTPOOL include INTO textpool LANGUAGE sy-langu.
 
       IF include+30(1) = 'C'.
 
