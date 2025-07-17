@@ -7,7 +7,8 @@ inspector to display technical parts of a class
 # Documentation
 
 Enter class name
-press <enter>
+
+press "enter"
   
 double click on entry in grid view to display source code.
 
